@@ -1,0 +1,10 @@
+<p
+  [ngClass]="{
+    green: user.firstName === 'A',
+    blue: user.firstName === 'B'
+  }"
+>
+  {{ user.firstName }}
+</p>
+<p>{{ user.lastName }}</p>
+<p>DOB: {{ user.dateOfBirth | birthYear }}</p>

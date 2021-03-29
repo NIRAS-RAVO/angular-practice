@@ -1,1 +1,18 @@
+<app-nav></app-nav>
+<!--{{ interpolation }}-->
 <h1>{{ title }}</h1>
+
+<!-- onClick and disable the button after click-->
+<button [disabled]="isDisabled" (click)="handleClick()">Show A user</button>
+
+<!-- IF isDisabled = true, then show the #user-box -->
+<div id="user-box" *ngIf="isDisabled">
+  <p>{{ user1.firstName }}</p>
+  <p>{{ user1.lastName }}</p>
+  <img [src]="user1.image" appMagnifier />
+</div>
+
+<hr />
+<div id="user-box" *ngFor="let user of users | async">
+  <app-user [user]="user"></app-user>
+</div>

@@ -1,0 +1,7 @@
+<nav>
+  <ul *ngFor="let menuItem of menuItems | async">
+    <li>
+      <a [href]="menuItem.link">{{ menuItem.item }}</a>
+    </li>
+  </ul>
+</nav>
